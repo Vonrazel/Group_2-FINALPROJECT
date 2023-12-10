@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paymenthmethod));
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -63,11 +64,23 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Location = new Point(585, 306);
+            button3.Name = "button3";
+            button3.Size = new Size(54, 42);
+            button3.TabIndex = 2;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Paymenthmethod
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(651, 350);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -82,5 +95,6 @@
 
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }

@@ -33,5 +33,12 @@ namespace Gymbross
             bac.RefreshOther();
             bac.transaction();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Homepage homepage = new Homepage();
+            this.Hide();
+            homepage.Show();
+        }
     }
 }

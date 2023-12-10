@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gymbross")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ab0cfe12e761619bbf2a82402338477adb10358")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gymbross")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gymbross")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

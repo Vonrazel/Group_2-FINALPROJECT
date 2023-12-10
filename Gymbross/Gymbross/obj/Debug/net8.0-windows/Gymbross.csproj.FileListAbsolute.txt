@@ -88,3 +88,4 @@ C:\Users\Von Razel\Desktop\Group_2-FINALPROJECT\Gymbross\Gymbross\obj\Debug\net8
 C:\Users\Von Razel\Desktop\Group_2-FINALPROJECT\Gymbross\Gymbross\obj\Debug\net8.0-windows\Gymbross.pdb
 C:\Users\Von Razel\Desktop\Group_2-FINALPROJECT\Gymbross\Gymbross\obj\Debug\net8.0-windows\Gymbross.genruntimeconfig.cache
 C:\Users\Von Razel\Desktop\Group_2-FINALPROJECT\Gymbross\Gymbross\obj\Debug\net8.0-windows\ref\Gymbross.dll
+C:\Users\Von Razel\Desktop\Group_2-FINALPROJECT\Gymbross\Gymbross\obj\Debug\net8.0-windows\Gymbross.sourcelink.json

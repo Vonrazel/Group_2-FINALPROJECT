@@ -36,9 +36,9 @@ namespace Gymbross
             SharedVariable.Enddate = dateTimePicker1.Value;
 
 
-
-            bac.Membership(SharedVariable.MemId, SharedVariable.Membershiptye, SharedVariable.Enddate);
             bac.refreshmemberships();
+            bac.Membership(SharedVariable.MemId, SharedVariable.Membershiptye, SharedVariable.Enddate);
+           
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Gymbross
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            bac.refreshmemberships();
         }
     }
 }
