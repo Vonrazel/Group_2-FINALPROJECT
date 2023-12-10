@@ -1,0 +1,106 @@
+CREATE DATABASE gymbross;
+
+CREATE TABLE admin (
+    adminuserid INT PRIMARY KEY, 
+    adminpassword VARCHAR(100)
+);
+
+CREATE TABLE coach (
+    coachid INT PRIMARY KEY,
+    coachname VARCHAR(100),
+    phonenumber VARCHAR(100),
+    specialization VARCHAR(255), 
+    certification VARCHAR(255)
+);
+
+CREATE TABLE member (
+    memberid INT PRIMARY KEY,
+    membername VARCHAR(100),
+    contactinfo VARCHAR(100),
+    age VARCHAR(100),
+    gender VARCHAR(100),
+    coachid INT,
+    FOREIGN KEY (coachid) REFERENCES coach(coachid) ON DELETE CASCADE
+);
+
+CREATE TABLE membership (
+    membershipid INT PRIMARY KEY,
+    membershiptype VARCHAR(100),
+    date TIMESTAMP,
+    memberid INT,
+    FOREIGN KEY (memberid) REFERENCES member(memberid) ON DELETE CASCADE
+);
+
+CREATE TABLE transaction (
+    transactionid INT PRIMARY KEY,
+    membershipid INT UNIQUE,
+    total DACIMAL(10,2),
+    amount DECIMAL(10,2),
+    change DECIMAL(10,2),
+    paymentmethod VARCHAR(200),
+    FOREIGN KEY (membershipid) REFERENCES membership(membershipid) ON DELETE CASCADE
+);
+
+CREATE TABLE program_categ (
+    categid INT PRIMARY KEY,
+    program_category VARCHAR(200)
+);
+
+CREATE TABLE program (
+    programid INT PRIMARY KEY,
+    programname VARCHAR(250),
+    sets VARCHAR(3000),
+    categid INT,
+    FOREIGN KEY (categid) REFERENCES program_categ(categid) ON DELETE CASCADE
+);
+
+CREATE TABLE membership_program(
+    membership_programid INT PRIMARY KEY,
+    membershipid INT,
+    programid INT,
+    FOREIGN KEY (membershipid) REFERENCES membership(membershipid) ON DELETE CASCADE,
+    FOREIGN KEY (programid) REFERENCES program(programid) ON DELETE CASCADE
+);
+
+
+	
+INSERT INTO program (programid, programname, categid, sets)
+VALUES 
+(1, 'Barbell Bench Press', 1, '3 sets x 8-12 reps'),
+(2, 'Dumbbell Shoulder Press', 1, '3 sets x 8-15 reps'),
+(3, 'Incline Dumbbell Press', 1, '3 sets x 10-12 reps'),
+(4, 'Triceps Dips', 1, '3 sets x 8-12 reps'),
+(5, 'Seated Dumbbell Lateral Raises', 1, '3 sets x 8-15 reps'),
+(6, 'Chest Flyes (Machine or Cable)', 1, '3 sets x 8-12 reps'),
+(7, 'Tricep Pushdowns (Machine or Cable)', 1, '3 sets x 8-12 reps'),
+(8, 'Overhead Tricep Extension', 1, '3 sets x 8-12 reps'),
+(9, 'Front Plate Raise', 1, '3 sets x 8-12 reps'),
+(10, 'Dumbbell Flyes', 1, '3 sets x 8-12 reps'),
+(11, 'Pull-Ups', 2, '3 sets x 8-12 reps'),
+(12, 'Bent Over Barbell Rows', 2, '3 sets x 8-12 reps'),
+(13, 'Lat Pulldowns', 2, '3 sets x 10-15 reps'),
+(14, 'Seated Cable Row', 2, '3 sets x 8-12 reps'),
+(15, 'Face Pulls', 2, '3 sets x 10-15 reps'),
+(16, 'Dumbbell Rows', 2, '3 sets x 8-12 reps'),
+(17, 'Chin-Ups', 2, '3 sets x 10-12 reps'),
+(18, 'T-Bar Rows', 2, '3 sets x 8-15 reps'),
+(19, 'Hammer Curls', 2, '3 sets x 8-12 reps'),
+(20, 'Reverse Grip Bent Over Rows', 2, '3 sets x 8-12 reps'),
+(21, 'Barbell Back Squats', 3, '3 sets x 8-12 reps'),
+(22, 'Deadlifts', 3, '3 sets x 8-15 reps'),
+(23, 'Leg Press', 3, '3 sets x 10-12 reps'),
+(24, 'Lunges', 3, '4 sets x 8-12 reps'),
+(25, 'Leg Extensions', 3, '4 sets x 8-12 reps');
+
+INSERT INTO coach (coachid, coachname, phonenumber, specialization, certification)
+VALUES 
+(1, 'Von Razel', '09517102787', 'Strength and Conditioning Coach, Weight Loss Coach', 'National Strength and Conditioning Association (NSCA)'),
+(2, 'Ken Adriane', '09662515053', 'Strength and Conditioning Coach, Sports-Specific Trainer', 'National Academy of Sports Medicine (NASM)'),
+(3, 'John Cedric', '09165585512', 'Weight Loss Coach, Certified Personal Trainer, Nutrition Coach', 'Fitness Educators and Trainers Association (FETA)'),
+(4, 'Clarence Daven', '09453760710', 'Rehabilitation Trainer, Group Exercise Instructor', 'Yoga Alliance');
+
+INSERT INTO admin (adminuserid, adminpassword)
+VALUES (123, 'von');
+
+    
+    
